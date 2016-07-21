@@ -40,37 +40,8 @@ stairsplus:register_all("warzone", "plastcrete" , "warzone:plastcrete", {
     sounds = default.node_sound_stone_defaults(),
 })
 
---crafts
-
-minetest.register_craft({
-	output = "warzone:concrete 12",
-	recipe = {
-		{"default:cobble", "default:cobble", "default:cobble"},
-		{"default:cobble", "default:stone", "default:cobble"},
-		{"", "", ""}
-	}
-})
-
-minetest.register_craft({
-	output = "warzone:hardcrete 8",
-	recipe = {
-		{"default:cobble", "default:cobble", "default:cobble"},
-		{"default_cobble", "default:stone", "default:cobble"},
-		{"default:obsidian", "default:obsidian", "default:obsidian"}
-	}
-})
-
-minetest.register_craft({
-	output = "warzone:plastcrete 16",
-	recipe = {
-		{"default:cobble", "default:cobble", "default:cobble"},
-		{"default:cobble", "default:stone", "default_cobble"},
-		{"warzone:plastic", "warzone:plastic", "warzone:plastic"}
-	}
-})
-
 --Plating
-colours = {
+local colours = {
     {"red", "Red", "FF0000"},
     {"orange", "Orange", "FF8000"},
     {"yellow", "Yellow", "FFFF00"},
@@ -226,29 +197,4 @@ minetest.register_node("warzone:hole_plastcrete", {
 
 --crafts
 
-minetest.register_craft({
-	output = "warzone:hole_concrete 6",
-	recipe = {
-		{"warzone:concrete", "", "warzone:concrete"},
-		{"", "default:glass", ""},
-		{"warzone:concrete", "", "warzone:concrete"}
-	}
-})
 
-minetest.register_craft({
-	output = "warzone:hole_hardcrete 6",
-	recipe = {
-		{"warzone:hardcrete", "", "warzone:hardcrete"},
-		{"", "default:glass", ""},
-		{"warzone:hardcrete", "", "warzone:hardcrete"}
-	}
-})
-
-minetest.register_craft({
-	output = "warzone:hole_plastcrete 6",
-	recipe = {
-		{"warzone:plastcrete", "", "warzone:plastcrete"},
-		{"", "default:glass", ""},
-		{"warzone:plastcrete", "", "warzone:plastcrete"}
-	}
-})

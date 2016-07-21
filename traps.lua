@@ -33,35 +33,6 @@ minetest.register_node("warzone:plastcrete_hiddendoor", {
 	sounds = default.node_sound_stone_defaults(),
 })
 
---Crafts
-
-minetest.register_craft({
-	output = "warzone:concrete_hiddendoor 8",
-	recipe = {
-		{"warzone:concrete", "warzone:concrete", "warzone:concrete"},
-		{"warzone:concrete", "", "warzone:concrete"},
-		{"warzone:concrete", "warzone:concrete", "warzone:concrete"}
-	}
-})
-
-minetest.register_craft({
-	output = "warzone:hardcrete_hiddendoor 8",
-	recipe = {
-		{"warzone:hardcrete", "warzone:hardcrete", "warzone:hardcrete"},
-		{"warzone:hardcrete", "", "warzone:hardcrete"},
-		{"warzone:hardcrete", "warzone:hardcrete", "warzone:hardcrete"}
-	}
-})
-
-minetest.register_craft({
-	output = "warzone:plastcrete_hiddendoor 8",
-	recipe = {
-		{"warzone:plastcrete", "warzone:plastcrete", "warzone:plastcrete"},
-		{"warzone:plastcrete", "", "warzone:plastcrete"},
-		{"warzone:plastcrete", "warzone:plastcrete", "warzone:plastcrete"}
-	}
-})
-
 --Spikes
 
 minetest.register_node("warzone:spikes", {

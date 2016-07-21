@@ -31,11 +31,3 @@ minetest.register_node("warzone:speedpad", {
 
 --crafts
 
-minetest.register_craft({
-	output = "warzone:speedpad",
-	recipe = {
-		{"group:leaves", "group:leaves", "group:leaves"},
-		{"group:leaves", "default:coal", "group:leaves"},
-		{"group:leaves", "group:leaves", "group:leaves"}
-	}
-})
