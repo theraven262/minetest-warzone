@@ -1,0 +1,1 @@
+warzone_building_version = 1

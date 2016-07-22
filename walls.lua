@@ -40,6 +40,55 @@ stairsplus:register_all("warzone", "plastcrete" , "warzone:plastcrete", {
     sounds = default.node_sound_stone_defaults(),
 })
 
+--Lamps (if building mod is enabled)
+
+if warzone_building_version == 1 then
+
+   minetest.register_node("warzone:concrete_lamp", {
+	description = "Concrete Lamp",
+	tiles = {"warzone_concrete.png", 
+             "warzone_concrete.png", 
+             "warzone_concrete_light.png", 
+             "warzone_concrete_light.png", 
+             "warzone_concrete_light.png", 
+             "warzone_concrete_light.png", 
+    },
+	groups = {cracky = 2},
+    light_source = 12,
+	sounds = default.node_sound_stone_defaults(),
+}) 
+
+   minetest.register_node("warzone:hardcrete_lamp", {
+	description = "Hardcrete Lamp",
+	tiles = {"warzone_hardcrete.png", 
+             "warzone_hardcrete.png", 
+             "warzone_hardcrete_light.png", 
+             "warzone_hardcrete_light.png", 
+             "warzone_hardcrete_light.png", 
+             "warzone_hardcrete_light.png", 
+    },
+	groups = {cracky = 2},
+    light_source = 12,
+	sounds = default.node_sound_stone_defaults(),
+}) 
+
+   minetest.register_node("warzone:plastcrete_lamp", {
+	description = "Plastcrete Lamp",
+	tiles = {"warzone_plastcrete.png", 
+             "warzone_plastcrete.png", 
+             "warzone_plastcrete_light.png", 
+             "warzone_plastcrete_light.png", 
+             "warzone_plastcrete_light.png", 
+             "warzone_plastcrete_light.png", 
+    },
+	groups = {cracky = 2},
+    light_source = 12,
+	sounds = default.node_sound_stone_defaults(),
+}) 
+ 
+else 
+end
+
 --Plating
 local colours = {
     {"red", "Red", "FF0000"},
@@ -91,7 +140,18 @@ stairsplus:register_all("warzone", coding_name , "warzone:plating_" .. coding_na
 end
 
 --Crafts
-
+if warzone_building_version == 1 then
+    
+    minetest.register_craft({
+	output = "warzone:plating_" .. coding_name ..  " 10",
+	recipe = {
+		{"default:stone_block", "dye:" .. coding_name, "default:stone_block"},
+		{"dye:" .. coding_name, "default:steel_block", "dye:" .. coding_name},
+		{"default:stone_block", "dye:" .. coding_name, "default:stone_block"}
+	}
+})
+else
+    
 minetest.register_craft({
 	output = "warzone:plating_" .. coding_name ..  " 8",
 	recipe = {
@@ -100,6 +160,7 @@ minetest.register_craft({
 		{"dye:" .. coding_name, "dye:" .. coding_name, "dye:" .. coding_name}
 	}
 })
+end
 
 end
 
@@ -112,7 +173,6 @@ minetest.register_craftitem("warzone:plastic", {
 
 --crafts
 
-
 minetest.register_craft({
 	output = "warzone:plastic 9",
 	recipe = {
@@ -121,9 +181,7 @@ minetest.register_craft({
 		{"", "", ""}
 	}
 })
-
-
---holes
+ --holes
 
 minetest.register_node("warzone:hole_concrete", {
 	tiles = {"warzone_concrete.png"},
@@ -193,8 +251,3 @@ minetest.register_node("warzone:hole_plastcrete", {
 		}
 	}
 })
-
-
---crafts
-
-
